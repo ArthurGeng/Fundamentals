@@ -9,9 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var list_service_1 = require("./services/list.service");
 var ListComponent = (function () {
-    function ListComponent() {
+    function ListComponent(listService) {
+        this.listService = listService;
     }
+    ListComponent.prototype.ngOnInit = function () {
+        this.events = this.listService.getEvents();
+    };
     return ListComponent;
 }());
 __decorate([
@@ -21,8 +26,9 @@ __decorate([
 ListComponent = __decorate([
     core_1.Component({
         selector: 'list-component',
-        template: "\n        <div>\n            <h1>{{event.id}}</h1>\n        </div>",
-    })
+        template: "\n        <div>\n            <h1>{{event?.id}}</h1>\n        </div>\n        <div *ngFor=\"let e of events\">\n            <h2>{{e.id}}</h2>\n        </div>\n",
+    }),
+    __metadata("design:paramtypes", [list_service_1.ListService])
 ], ListComponent);
 exports.ListComponent = ListComponent;
 //# sourceMappingURL=list.component.js.map

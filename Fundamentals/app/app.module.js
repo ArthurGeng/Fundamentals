@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var list_component_1 = require("./components/list.component");
+var list_service_1 = require("./components/services/list.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -18,6 +19,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
         declarations: [app_component_1.AppComponent, list_component_1.ListComponent],
+        providers: [list_service_1.ListService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -6,20 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular 2';
-        this.events = [{ id: 1 }, { id: 2 }, { id: 3 }];
+var ListService = (function () {
+    function ListService() {
     }
-    return AppComponent;
+    ListService.prototype.getEvents = function () {
+        return EVENTS;
+    };
+    return ListService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n        <div>\n            <list-component *ngFor=\" let event of events\" [event]=\"event\"></list-component>\n        </div>",
-        styleUrls: ['app.component.css'],
-        moduleId: module.id
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+ListService = __decorate([
+    core_1.Injectable()
+], ListService);
+exports.ListService = ListService;
+var EVENTS = [{ id: 1 }, { id: 2 }, { id: 3 }];
+//# sourceMappingURL=list.service.js.map

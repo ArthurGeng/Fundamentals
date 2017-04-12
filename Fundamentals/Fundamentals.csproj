@@ -122,6 +122,7 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\components\list.component.ts" />
+    <TypeScriptCompile Include="app\components\services\list.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <PropertyGroup>
